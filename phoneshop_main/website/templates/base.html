@@ -28,10 +28,14 @@
                 <a class="nav-link" href="#">TBD</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">TBD</a>
+                <a class="nav-link" href="#">Sign up</a>
               </li>
               <li class="nav-item">
-                <a href="{% url 'login' %}" class="nav-link" aria-disabled="true">Login</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="nav-link" aria-disabled="true">Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="nav-link" aria-disabled="true">Login</a>
+                {% endif %}
               </li>
             </ul>
           </div>
@@ -42,7 +46,7 @@
 <body>
     {% if messages %}
         {% for message in messages %}
-            <div class="alert {% if message.tags == 'error' %} alert-danger {% else %} alert-primary {% endif %} alert-dismissible fade show" role="alert">
+            <div class="mx-6 alert {% if message.tags == 'error' %} alert-danger {% else %} alert-primary {% endif %} alert-dismissible fade show" role="alert">
                 <center><strong>{{message}}</strong></center>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -60,7 +64,7 @@
     <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 
-<footer class="bg-success py-5 fixed-bottom">
+<footer class="bg-success py-5 sticky-bottom mt-5">
     <div class="container"> 
         <p class="text-white m-o text-center" > Copyright &copy; PhoneShop 2023. All rights reserved </p>
     </div>
