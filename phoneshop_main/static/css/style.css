@@ -33,3 +33,13 @@
     transform: translate(-50%);
 }
 
+.img-small {
+    width: 180px;
+    height: 180px;
+    padding: 10px;
+}
+
+.card-size {
+    width: 75%;
+    margin: auto;
+}
