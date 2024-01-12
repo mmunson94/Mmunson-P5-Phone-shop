@@ -9,74 +9,90 @@
     </div>
 </header>
 
-<div class="container">
-    {% if cart_products %}
-        {% for product in cart_products %}
-            <div class="card mb-3 mt-3 card-size">
-                <div class="row g-0 mt-2">
-                    <div class="col-md-4 mt-2 text-center">
-                        <img src="{{ product.image.url }}" class="img-fluid rounded start img-small" alt="">
-                    </div>
-                    <div class="col-md-5">
-                        <div class="card-body">
-                            <center>
-                                <h5 class="card-title">{{ product.name }}</h5>
-                                <br />
-                                <p class="card-text justified">{{ product.description }}</p>
-                           
-
-                            
-                                <div class="d-flex justify-content-center small mb-2">
-                                    {% if product.is_sale %}
-                                        <strike>{{ product.price }}</strike>
-                                        &nbsp;
-                                        £{{ product.sale_price }}
-                                    {% else %}
-                                        {{ product.price }}                               
-                                    {% endif %}
-                                </div>
-
-                                <div class="d-flex align-items-end my-4 mx-3 px-3">
-                                    <div class="row justify-content-start mx-2">
-                                        <div class="text-center py-2">Quantity</div>
-                                        <div>
-                                            <select class="form-select form-select-sm" id="select{{product.id}}" aria-label="item quantity">    
-                                                    {% for key, value in quantities.items %}
-                                                        {% if key == product.id|slugify %}
-                                                        <option selected>{{ value }}</option>
-                                                        {% endif%}
-                                                    {% endfor %}       
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <a href="{% url 'index' %}" class="btn btn-secondary mx-2">Home</a>
-                                    <button type="button" data-index="{{product.id}}" 
-                                        class="btn btn-secondary update-cart">
-                                        Update
-                                    </button>
-                                    <button type="button" data-index="{{product.id}}"
-                                        class=" mx-2 btn btn-danger delete-product">
-                                        Remove
-                                    </button>
-                                </div>
-                            </center>
-
+<div class="container cart-container">
+    <div class="cart-items">
+        {% if cart_products %}
+            {% for product in cart_products %}
+                <div class="card mb-3 mt-3 card-size">
+                    <div class="row g-0 mt-2">
+                        <div class="col-md-4 mt-2 text-center">
+                            <img src="{{ product.image.url }}" class="img-fluid rounded start img-small" alt="">
                         </div>
-                    </div>    
-                </div>
-            </div>
+                        <div class="col-md-5">
+                            <div class="card-body">
+                                <center>
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <br />
+                                    <p class="card-text justified">{{ product.description }}</p>
+                            
 
-        {% endfor %}
-        <h3 class="mx-5">Total: £{{ totals }}</h3>
-    {% else %}
-        <p><h1>Your Basket is empty. Add an item to your cart.</h1></p>
-    {% endif %}
+                                
+                                    <div class="d-flex justify-content-center small mb-2">
+                                        {% if product.is_sale %}
+                                            <strike>{{ product.price }}</strike>
+                                            &nbsp;
+                                            £{{ product.sale_price }}
+                                        {% else %}
+                                            {{ product.price }}                               
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="d-flex align-items-end my-4 mx-3 px-3">
+                                        <div class="row justify-content-start mx-2">
+                                            <div class="text-center py-2">Quantity</div>
+                                            <div>
+                                                <select class="form-select form-select-sm" id="select{{product.id}}" aria-label="item quantity">    
+                                                        {% for key, value in quantities.items %}
+                                                            {% if key == product.id|slugify %}
+                                                            <option selected>{{ value }}</option>
+                                                            {% endif%}
+                                                        {% endfor %}       
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <a href="{% url 'index' %}" class="btn btn-secondary mx-2">Home</a>
+                                        <button type="button" data-index="{{product.id}}" 
+                                            class="btn btn-secondary update-cart">
+                                            Update
+                                        </button>
+                                        <button type="button" data-index="{{product.id}}"
+                                            class=" mx-2 btn btn-danger delete-product">
+                                            Remove
+                                        </button>
+                                    </div>
+                                </center>
+
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+
+                {% endfor %}
+            
+                {% else %}
+                <p><h1>Your Basket is empty. Add an item to your cart.</h1></p>
+                {% endif %}
+    </div>
+    <div class="cart-summary">
+        {% if cart_products %}
+            {% for product in cart_product %}
+                <h2>{{ product.name }}</h2><span>{{ product.price}}</span>
+            {% endfor%}
+        {% endif %}
+
+        <div class="d-flex justify-content-between">
+            <h3 class="">Total: £{{ totals }}</h3>
+            <button class="btn btn-primary">Checkout</button>
+        </div>
+    </div>
 </div>
+
+
 <script>
     $(document).on('click', '.update-cart', function(e) {
 
