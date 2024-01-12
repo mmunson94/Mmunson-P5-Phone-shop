@@ -14,7 +14,7 @@
         {% for product in cart_products %}
             <div class="card mb-3 mt-3 card-size">
                 <div class="row g-0 mt-2">
-                    <div class="col-md-4 mt-2">
+                    <div class="col-md-4 mt-2 text-center">
                         <img src="{{ product.image.url }}" class="img-fluid rounded start img-small" alt="">
                     </div>
                     <div class="col-md-5">
@@ -70,7 +70,9 @@
                     </div>    
                 </div>
             </div>
+
         {% endfor %}
+        <h3 class="mx-5">Total: £{{ totals }}</h3>
     {% else %}
         <p><h1>Your Basket is empty. Add an item to your cart.</h1></p>
     {% endif %}
