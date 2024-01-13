@@ -79,14 +79,47 @@
                 {% endif %}
     </div>
     <div class="cart-summary">
+        <h2>Cart Summary</h2>
+       
         {% if cart_products %}
-            {% for product in cart_product %}
-                <h2>{{ product.name }}</h2><span>{{ product.price}}</span>
+            {% for product in cart_products %}
+                <div class="cart-summary__container">
+                    <div class="cart-summary__container--img"><img src="{{ product.image.url }}"></div>
+                    <div class="cart-summary__container--item">
+                        <div class="cart-summary__container--item-title">{{ product.name }}</div>
+                        {% for key, value in quantities.items %}
+                            {% if key == product.id|slugify %}
+                                <div class="cart-summary__container--item-subtitle">Qty x {{ value }}</div>
+                            {% endif%}
+                        {% endfor %}  
+                        
+                    </div>
+                    {% if product.is_sale %}
+                        <div class="cart-summary__container--pricing">£{{ product.sale_price }}</div>
+                    {% else %}
+                        <div class="cart-summary__container--pricing">£{{ product.price }}</div>
+                    {% endif %}
+                </div>
             {% endfor%}
         {% endif %}
 
-        <div class="d-flex justify-content-between">
-            <h3 class="">Total: £{{ totals }}</h3>
+        <div class="line"></div>
+        <div class="cart-summary__subtotal">
+            <div class="cart-summary__subtotal-container">
+                <div class="cart-summary__subtotal-container__title">Subtotal</div>
+                <div class="cart-summary__subtotal-container__price">£{{ totals }}</div>
+            </div>
+        </div>
+
+        <div class="cart-summary__subtotal">
+            <div class="cart-summary__subtotal-container">
+                <div class="cart-summary__subtotal-container__title">Delivery</div>
+                <div class="cart-summary__subtotal-container__price">FREE</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="total-container">
+            <h3 class="total">Total: £{{ totals }}</h3>
             <button class="btn btn-primary">Checkout</button>
         </div>
     </div>
