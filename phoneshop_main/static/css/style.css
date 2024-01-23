@@ -49,6 +49,10 @@
     gap: 24px;
 }
 
+.success-header {
+    height: calc(100vh - 136px - 56px);
+}
+
 @media screen and (min-width: 1000px) {
     .cart-container {
         display: flex;
@@ -64,4 +68,3 @@
         width: 30%;
     }
 }
-
