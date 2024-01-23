@@ -46,6 +46,11 @@ class Cart():
         
         self.session.modified = True
 
+    def clear(self):
+        self.cart.clear()
+        self.session.method = True
+        self.session.save()
+
     def get_prods(self):
         product_ids = self.cart.keys()
         products = Product.objects.filter(id__in=product_ids)

@@ -11,6 +11,8 @@ def HomePageView(request):
     return render(request, 'home.html', {})
 
 def success(request):
+    cart = Cart(request)
+    cart.clear()
     return render(request, 'success.html', {})
 
 def cancelled(request):
