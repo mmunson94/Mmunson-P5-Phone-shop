@@ -49,9 +49,10 @@
     gap: 24px;
 }
 
-.success-header {
+.bodys-container {
     height: calc(100vh - 136px - 56px);
 }
+
 
 @media screen and (min-width: 1000px) {
     .cart-container {

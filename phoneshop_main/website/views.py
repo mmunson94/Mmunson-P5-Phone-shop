@@ -67,9 +67,11 @@ def category(request, foo):
     try:
         # look up the category
         category = Category.objects.get(name=foo)
-        print('line 70')
         products = Product.objects.filter(category=category)
-        print('line 72')
+        if foo == 'All':
+            products = Product.objects.all()
+            category = 'All products'
+            
         return render(request, 'category.html', {'products': products, 'category': category})
     except:
         messages.error(request, ("The category does not exist..."))
