@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Cancelled</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v6.4.0/js/all.js"></script>
-</head>
-<body>
-    <section class="section">
-        <div class="container">
-            Payment Cancelled
+{% extends 'base.html' %}
+{% block content %}
+
+<header class="bg-light py-5 bodys-container">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-black">
+           <h1 class="display-4 fw-bolder">Your payment was cancelled.</h1> 
+           <p class="lead fw-normal text-secondary-50 mb-0">Your card has not been charged. Please try again.</p>
+           <a href="{% url 'index' %}" class="btn btn-secondary my-4 mx-2">Home</a>
         </div>
-    </section>
-</body>
-</html>
+    </div>
+</header>
+
+{% endblock %}
