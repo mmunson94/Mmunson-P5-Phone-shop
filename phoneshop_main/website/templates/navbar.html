@@ -14,7 +14,8 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="{% url 'category' 'All' %}">All Products</a> </li>
                     <li><a class="dropdown-item" href="{% url 'category' 'iPhone' %}">iPhone</a> </li>
-                    <li><a class="dropdown-item" href="{% url 'category' 'Others' %}">Others</a> </li>
+                    <li><a class="dropdown-item" href="{% url 'category' 'Android' %}">Android</a> </li>
+                    <li><a class="dropdown-item" href="{% url 'category' 'Other' %}">Other</a> </li>
 
                 </ul>
             {% if user.is_authenticated %}
