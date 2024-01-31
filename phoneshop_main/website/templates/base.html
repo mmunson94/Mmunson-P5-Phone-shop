@@ -37,10 +37,11 @@
     <script src="https://kit.fontawesome.com/2cc81c8112.js" crossorigin="anonymous"></script>
 </body>
 
-<footer class="bg-success py-3 sticky-bottom mt-4">
+<footer class="bg-success py-1 sticky-bottom mt-4">
     <div class="container"> 
-        <p class="text-white m-o text-center">Tel: 01462621458</p>
-        <p class="text-white m-o text-center" > Copyright &copy; PhoneShop 2023. All rights reserved </p>
+        <div class="newsletter-container mb-3">
+            <a class="newsletter-link" href="{% url 'index' %}">Subscribe to our Newsletter &nbsp; <i class="bi bi-arrow-right-circle-fill"></i></a>
+        </div>
         <ul class="social-networks">
             <li>
                 <a href="http://facebook.com" target="_blank" rel="noopener"
@@ -63,6 +64,7 @@
                         class="fa-brands fa-square-youtube"></i></a>
             </li>
         </ul>
+        <p class="text-white m-o text-center" > Copyright &copy; PhoneShop 2024. All rights reserved </p>
     </div>
    
 </footer>
