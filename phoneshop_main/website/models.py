@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.utils import timezone
 # Create your models here.
 
 class Category(models.Model):
@@ -47,3 +48,11 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.product)
+
+class SubscribedUsers(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    created_data = models.DateTimeField('Date created', default=timezone.now)
+
+    def __str__(self):
+        return self.email
