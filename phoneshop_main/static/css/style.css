@@ -108,6 +108,27 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
+.product--container {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.advertisement {
+    margin-top: 3rem;
+}
+
+.advertisement--img {
+    width: 350px;
+}
+
+.advertisement--link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
 @media screen and (min-width: 1000px) {
     .cart-container {
         display: flex;
@@ -121,5 +142,11 @@
     
     .cart-summary {
         width: 30%;
+    }
+
+    .product--container {
+        display: flex;
+        gap: 2rem;
+        flex-direction: row;
     }
 }
