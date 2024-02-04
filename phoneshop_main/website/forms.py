@@ -105,4 +105,4 @@ class NewsletterForm(forms.ModelForm):
 class SendNewsletterForm(forms.Form):
     subject = forms.CharField()
     receivers = forms.CharField()
-    messsage = forms.CharField(widget=TinyMCE(), label="Email content")
+    message = forms.CharField(widget=TinyMCE(), label="Email content")
