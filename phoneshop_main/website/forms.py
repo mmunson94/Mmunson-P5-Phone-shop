@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms 
 from .models import Product, SubscribedUsers
+from tinymce.widgets import TinyMCE
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(label="", widget=forms.TextInput(attrs={'class': 'form-control',
@@ -100,3 +101,8 @@ class NewsletterForm(forms.ModelForm):
             self.fields['email'].widget.attrs['placeholder'] = ''
             self.fields['email'].label = 'Your Email'
             self.fields['email'].help_text = ''  
+
+class SendNewsletterForm(forms.Form):
+    subject = forms.CharField()
+    receivers = forms.CharField()
+    messsage = forms.CharField(widget=TinyMCE(), label="Email content")
