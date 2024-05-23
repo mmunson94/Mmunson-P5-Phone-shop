@@ -101,17 +101,46 @@ For more detailed instructions, refer to the PythonAnywhere official documentati
 
 ## Usage
 
-## Screenshots
+two sectionss:
+
+one from customer aspect
+on from owner aspect
+include:
+Screenshots in section
+
 
 ## Technology Used
 
+all software used to run and deploy website
+
 ## Contributing
+
+chatgpt how to contribue to project
+mission statement(maybe)
+guidelines
 
 ## License
 
+mit license
+
+
 ## Testing
 
+table format
+testing the fuctionality
+20 entries fetures tested
+headers include
+expected rseult
+outcome
+
+
+## Validation
+
 ## Bugs
+- active
+- resolved
+
+## future improvements
 
 
 
