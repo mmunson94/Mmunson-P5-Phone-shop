@@ -37,7 +37,7 @@ Payment Integration:
 
 Database Management:
 
-- Data Storage and Retrieval: Utilizes a database to store product information, user details, order histories, and other relevant data, ensuring quick access and management.
+- Data Storage and Retrieval: Utilises a database to store product information, user details, order histories, and other relevant data, ensuring quick access and management.
 
 User Interface and Experience:
 
