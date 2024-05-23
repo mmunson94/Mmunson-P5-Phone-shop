@@ -2,7 +2,7 @@
 
 An E-Commerce website featuring the sale of electronic products, Main features implemented by the app include Login and logout with the use of sessions for authentication, stripe payment, usage of databases to store and retrieve data, stylesheets make use of Bootstrap 5.
 
-### live link - https://mmunson94.pythonanywhere.com/
+### Live link - https://mmunson94.pythonanywhere.com/
 
 Admin Credentials - 
 - Username = mmunson94
@@ -23,7 +23,11 @@ Admin Credentials -
 
 ## Overview 
 
-This project aims to provide a user friendly experience for customer to purchase electronic products. The website also allows the owner to process payments and handle errors if they may occur providing the owner with a seamless product. For customers, the platform offers a secure and intuitive interface for browsing, selecting, and purchasing electronic goods, supported by robust features such as session-based login and logout for secure authentication, and a streamlined payment process through Stripe. For the owner, the website facilitates efficient management of transactions and customer interactions, leveraging a comprehensive database for storing and retrieving data, and implementing error-handling mechanisms to ensure smooth operations. Enhanced with Bootstrap 5 for modern and responsive design, this project aspires to create a reliable and engaging shopping environment while simplifying the backend processes for the owner.
+This project aims to provide a user friendly experience for customer to purchase electronic products. The website also allows the owner to process payments and handle errors if they may occur providing the owner with a seamless product. 
+
+For customers, the platform offers a secure and intuitive interface for browsing, selecting, and purchasing electronic goods, supported by robust features such as session-based login and logout for secure authentication, and a streamlined payment process through Stripe. 
+
+For the owner, the website facilitates efficient management of transactions and customer interactions, leveraging a comprehensive database for storing and retrieving data, and implementing error-handling mechanisms to ensure smooth operations. Enhanced with Bootstrap 5 for modern and responsive design, this project aspires to create a reliable and engaging shopping environment while simplifying the backend processes for the owner.
 
 ## Features
 
@@ -48,7 +52,8 @@ E-Commerce Functionalities:
 - Product Catalog: Display of electronic products with detailed descriptions, prices, and images.
 - Shopping Cart: Allows customers to add, remove, and manage products they intend to purchase.
 - Order Processing: Facilitates the processing of customer orders from checkout to confirmation.
-
+- Sorting: able to filter through product type and brand
+  
 Error Handling:
 
 - Error Management: Implements mechanisms to handle errors gracefully, providing informative messages to users and maintaining the integrity of the shopping experience.
@@ -56,6 +61,10 @@ These features collectively aim to create an efficient and enjoyable shopping ex
 
 ## Installation
 
+## Deployment
+
+Edit deployement section !
+ 
 Deployment Process on PythonAnywhere:
 
 1. Create an Account:
