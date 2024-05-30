@@ -67,8 +67,55 @@ Error Management: Implements mechanisms to handle errors gracefully, providing i
 - Login failure messages.
 - During the sending of the newsletter confirmation email, if an invalid email is supplied the app can handle it gracefully.
 
+<br>
 
 ## Installation
+
+### 1. Create a virtual enviroment (optional): 
+Recommended that you use a virtual enviroment to run the app.
+
+#### How to create a virtual enviroment
+Make sure you have [Python](https://www.python.org/downloads/) installed (Python3 is recommended).
+Once you have Python installed create the virtual enviroment by typing:
+```
+python -m venv /path/to/new/virtual/enviroment
+```
+e.g. 
+```
+python -m venv /documents/michael
+```
+This would create a virtual in your /documents/michaeldirectory
+
+
+### 2. Activate the virtual enviroment:
+```
+source venv/bin/activate
+```
+Once you're finished with your virtual enviroment you can also exit or quit by typing.
+```
+deactivate
+```
+
+
+### 3. Install the prerequisite packages:
+Make sure you have `postgresql` installed, if not, you can install it via [homebrew](https://brew.sh)
+```
+brew install postgresql
+```
+
+The list of packages required for this app are saved in the requirements.txt. Depending on your Python installation you can either use pip or pip3.
+Run this command in the terminal to install the packages:
+```
+pip install -r requirements.txt
+```
+
+### 4. Run the server:
+In order the run the server execute this command:
+```
+python manage.py runserver
+```
+
+
 
 ## Deployment
 
