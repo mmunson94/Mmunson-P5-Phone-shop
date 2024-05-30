@@ -154,6 +154,9 @@ In order to build the website, various software tools and technologies were used
 
 #### Database
 - PostgreSQL: For storing and managing data.
+
+#### Deployment
+- Pythonanywhere: Hosting platform to deploy the app.
   
 ## Contributing
 
