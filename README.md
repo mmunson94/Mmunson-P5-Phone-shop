@@ -3,6 +3,7 @@
 An E-Commerce website featuring the sale of electronic products, Main features implemented by the app include Login and logout with the use of sessions for authentication, stripe payment, usage of databases to store and retrieve data, stylesheets make use of Bootstrap 5.
 
 ### Live link - https://mmunson94.pythonanywhere.com/
+### [Business Model](https://github.com/mmunson94/Mmunson-P5-Phone-shop/blob/main/E-Commerce-Business-Model.md)
 
 Admin Credentials - 
 - Username = mmunson94
