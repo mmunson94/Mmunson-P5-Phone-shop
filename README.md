@@ -232,12 +232,274 @@ mit license
 
 ## Testing
 
-table format
-testing the fuctionality
-20 entries fetures tested
-headers include
-expected rseult
-outcome
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Test Number</th>
+            <th>Test Group</th>
+            <th>Description</th>
+            <th>Steps</th>
+            <th>Expected Result</th>
+            <th>Actual Output</th>
+            <th>Pass/Fail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Login System</td>
+            <td>(Happy path) if Username and password matches, the system would log the user in successfully</td>
+            <td>Open /login, use ‘admin’ and ‘password’ as username/password</td>
+            <td>Successful login message<br>User gets routed to /Home</td>
+            <td>Successful login message<br>User gets routed to /Home</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Login System</td>
+            <td>(Unhappy path) if Username and password does not match, the system would not grant access</td>
+            <td>Open /login, use ‘adminxyz’ and ‘passwordxyz’ as username/password</td>
+            <td>Error message.<br>User remains in the login page for another retry</td>
+            <td>Error message.<br>User remains in the login page for another retry</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Login System</td>
+            <td>Registration - Happy path. Does the registration page load.</td>
+            <td>Navigate to /register</td>
+            <td>Page loads with registration form</td>
+            <td>Page loads with registration form</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Login System</td>
+            <td>Registration - Happy path. Allows registration of a new user</td>
+            <td>Fill out the form with user details</td>
+            <td>Successful registration message<br>User gets routed to /Home</td>
+            <td>Successful registration message<br>User gets routed to /Home</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Login System</td>
+            <td>UI: Registration button only shown when anonymous user using the app<br>Logout button shown when user is logged in</td>
+            <td>Launch the app or Login as any user</td>
+            <td>Anonymous users are shown the Register button<br>Logged in users are shown Logout button</td>
+            <td>Anonymous users are shown the Register button<br>Logged in users are shown Logout button</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Cart</td>
+            <td>When a product is added from the Product page, the item is added successfully in the cart</td>
+            <td>Navigate to product page. Click ‘Add to Cart’</td>
+            <td>1 item to be added to the Cart<br>Add to Cart message is displayed</td>
+            <td>1 item is added to the Cart<br>Add to Cart message is displayed</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Cart</td>
+            <td>User can remove an item from the cart</td>
+            <td>Navigate to Cart page, click ‘Remove’</td>
+            <td>Item removed from the cart</td>
+            <td>Item removed from the cart</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Cart</td>
+            <td>Update the quantity of products upon changing the value from the dropdown</td>
+            <td>Navigate to Cart page, choose a different quantity value from the dropdown, press ‘Update’</td>
+            <td>Cart gets updated with the dropdown menu’s value<br>Successful message also displayed</td>
+            <td>Cart gets updated with the dropdown menu’s value<br>Successful message also displayed</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Cart</td>
+            <td>Total price of the cart is calculated successfully</td>
+            <td>Add multiple items in the cart, total value of products calculated correctly</td>
+            <td>Cart total reflects the sum of all the items in the cart</td>
+            <td>Cart total reflects the sum of all the items in the cart</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Cart</td>
+            <td>When an item is already in the basket, adding additional quantities of the same item updates the cart accordingly</td>
+            <td>Add a product e.g. iPhone 15 to the basket with 1 qty.<br>Go to the product page again, and add the same item again</td>
+            <td>The cart reflects the correct quantities of items</td>
+            <td>Latter addition of same items does not update the cart value</td>
+            <td>Fail</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Checkout</td>
+            <td>Opens up Stripe’s checkout page</td>
+            <td>Add items to the cart, press ‘Checkout’</td>
+            <td>User gets navigated to ‘checkout.stripe.com/xxx’</td>
+            <td>User gets navigated to ‘checkout.stripe.com/xxx’</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Checkout</td>
+            <td>Opens up Stripe’s checkout page with the correct Cart total</td>
+            <td>Add items to the cart, press ‘Checkout’</td>
+            <td>Stripe page shows the same total as shown in the /cart page</td>
+            <td>Stripe page shows the same total as shown in the /cart page</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Checkout</td>
+            <td>Successful payment</td>
+            <td>Add items to the cart, press ‘Checkout’, use card details and press ‘Pay’</td>
+            <td>‘Your payment was successful’ message displayed<br>User gets routed back to the app. Green background shown.<br>Cart value is 0</td>
+            <td>‘Your payment was successful’ message displayed<br>User gets routed back to the app. Green background shown.<br>Cart value is 0</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Checkout</td>
+            <td>Payment failure</td>
+            <td>Add items to the cart, press ‘Checkout’, use invalid card details and press ‘Pay’</td>
+            <td>Stripe API throws error message, asking user to retry</td>
+            <td>Stripe API throws error message, asking user to retry</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Checkout</td>
+            <td>User chooses to cancel transaction</td>
+            <td>User presses Back button from the Stripe checkout page</td>
+            <td>User taken back to the app.<br>‘Your payment was cancelled’ message displayed.<br>Cart value does not change</td>
+            <td>User taken back to the app.<br>‘Your payment was cancelled’ message displayed.<br>Cart value does not change</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Newsletters</td>
+            <td>User able to subscribe to newsletters</td>
+            <td>Navigate to /newsletters page<br>Fill out the form and press ‘Subscribe’</td>
+            <td>Successful subscription message displayed<br>User gets an email in the next few hours</td>
+            <td>Successful subscription message displayed<br>User gets an email in the next 1-2h</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Newsletters</td>
+            <td>Multiple subscriptions from the same email</td>
+            <td>Use the same email to subscribe again</td>
+            <td>‘Already subscribed’ message displayed</td>
+            <td>‘Already subscribed’ message displayed</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>Newsletters</td>
+            <td>Try to subscribe with invalid email address</td>
+            <td>User types gibberish in the email field</td>
+            <td>‘Enter a valid email address’ displayed</td>
+            <td>‘Enter a valid email address’ displayed</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>Newsletters</td>
+            <td>User should not be able to subscribe with an email that doesn’t exist</td>
+            <td>User types an email with valid format but the email doesn’t exist</td>
+            <td>‘Enter a valid email address’ displayed</td>
+            <td>Successful subscription message displayed</td>
+            <td>Fail</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>Products</td>
+            <td>Clicking menu opens up all the correct pages</td>
+            <td>User clicks Categories > iPhone</td>
+            <td>User gets navigated to /category/iPhone</td>
+            <td>User gets navigated to /category/iPhone</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Advertisements</td>
+            <td>Advertisements are loaded successfully</td>
+            <td>User navigates to a Product’s detail page</td>
+            <td>Ad shown on the right hand side</td>
+            <td>Ad shown on the right hand side</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>Advertisements</td>
+            <td>Advertisements are randomly generated</td>
+            <td>User navigates to a Product’s detail page</td>
+            <td>Similar ad not shown on multiple refreshes</td>
+            <td>Similar ad not shown on multiple refreshes</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>Advertisements</td>
+            <td>Clicking an ad takes you to the vendors site</td>
+            <td>User clicks on the ad</td>
+            <td>User taken to the vendors page</td>
+            <td>User taken to the vendors page</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>Footer links</td>
+            <td>Clicking social media links</td>
+            <td>User clicks Facebook icon from the footer</td>
+            <td>User taken to a Facebook page</td>
+            <td>User taken to a Facebook page</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>Footer links</td>
+            <td>Clicking social media links</td>
+            <td>User clicks Twitter icon from the footer</td>
+            <td>User taken to a Twitter page</td>
+            <td>User taken to a Twitter page</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>Footer links</td>
+            <td>Clicking social media links</td>
+            <td>User clicks Instagram icon from the footer</td>
+            <td>User taken to a Instagram page</td>
+            <td>User taken to a Instagram page</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>User experience</td>
+            <td>Images of the Product displayed nicely in a grid fashion</td>
+            <td>User logs in</td>
+            <td>Product images are displayed, and not missing</td>
+            <td>Product images are displayed, and not missing</td>
+            <td>Pass</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>User experience</td>
+            <td>Sale products are highlighted</td>
+            <td>User logs in and browse the page</td>
+            <td>Sale products highlighted with a strikethrough text</td>
+            <td>Sale products highlighted with a strikethrough text</td>
+            <td>Pass</td>
+        </tr>
+    </tbody>
+</table>
+
 
 
 ## Validation
