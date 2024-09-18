@@ -9,6 +9,7 @@ from django import forms
 from django.contrib.auth.decorators import login_required
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+import random
 
 # Create your views here.
 def index(request):
@@ -61,8 +62,18 @@ def register_user(request):
         return render(request, 'register.html', {'form': form})
 
 def product(request, pk):
+    images = [
+        'assets/images/apple-ad.png',
+        'assets/images/apple-ad-2.png',
+        'assets/images/apple-ad-3.png',
+        'assets/images/apple-ad-4.png',
+        'assets/images/apple-ad-5.png',
+        'assets/images/apple-ad-6.png',
+    ]
+    random_image = random.choice(images)
+
     product = Product.objects.get(id=pk)
-    return render(request, 'product.html', {'product': product})
+    return render(request, 'product.html', {'product': product, 'ad_img': random_image})
 
 def category(request, foo):
     foo = foo.replace('-', ' ')
